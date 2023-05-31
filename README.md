@@ -4,4 +4,4 @@
 ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
 
 # Speech-Recognition-Exercise
-Build an automated data pipeline to perform speech recognition using the SpeechRecognition library in Python and Google Cloud Speech-to-Text API.
+Build a data pipeline to perform speech recognition and analysis using the SpeechRecognition library in Python and Google Cloud Speech-to-Text API.
