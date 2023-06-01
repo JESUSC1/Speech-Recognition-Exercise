@@ -24,10 +24,16 @@ WORKDIR /tmp/portaudio
 # Generate the 'configure' script from 'configure.in'
 RUN autoreconf -fiv
 
-# Configure and build PortAudio
+# Switch to root user
+USER root
+
+# Install the PortAudio library
 RUN ./configure && \
     make && \
     make install
+
+# Switch back to non-root user
+USER $NB_UID
 
 # Copy the Jupyter notebook to the home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
