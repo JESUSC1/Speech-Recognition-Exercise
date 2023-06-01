@@ -33,6 +33,9 @@ WORKDIR /home/$NB_USER
 # Copy the Jupyter notebook to the home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
+# Mount the repository directory as a volume
+VOLUME /home/$NB_USER
+
 # Start the Jupyter Notebook
 # CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
 
