@@ -7,15 +7,15 @@
 </a>
 
 <a href="https://www.python.org">
-    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" width="110" height="20">
+    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" width="100" height="20">
 </a>
 
 <a href="https://www.apache.org">
-    <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" width="110" height="20">
+    <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" width="100" height="20">
 </a>
 
 <a href="https://mybinder.org/v2/gh/JESUSC1/Speech-Recognition-Exercise.git/HEAD?labpath=Speech_Recognition_Exercise.ipynb">
-    <img src="https://mybinder.org/badge_logo.svg" alt="Binder" width="110" height="20">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Binder" width="100" height="20">
 </a>
 
 
