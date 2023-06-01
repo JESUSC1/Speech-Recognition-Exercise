@@ -52,8 +52,11 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 # By using chmod 644, the notebook file will be readable by the user running the Jupyter Notebook 
 # server inside the container, as well as by members of the same group. Other users will have read-only access to the file
 
-# Set the working directory to the home directory
-WORKDIR /home/$NB_USER
+# Copy the entire repository to the desired directory
+COPY . /home/$NB_USER/Speech-Recognition-Exercise
+
+# Set the working directory to the root of the repository
+WORKDIR /home/$NB_USER/Speech-Recognition-Exercise
 
 # Start the Jupyter Lab
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
