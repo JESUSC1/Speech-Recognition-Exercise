@@ -16,8 +16,7 @@ COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar
 
 # Extract the PortAudio source code
 RUN tar -xf /tmp/portaudio.tar -C /tmp && \
-    chown -R $NB_UID:$NB_GID /tmp/portaudio && \
-    mv /tmp/portaudio.tar /tmp/portaudio.tar.old
+    chown -R $NB_UID:$NB_GID /tmp/portaudio
 
 # Set the working directory to the PortAudio source directory
 WORKDIR /tmp/portaudio
