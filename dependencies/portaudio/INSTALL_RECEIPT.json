@@ -1,0 +1,47 @@
+{
+  "homebrew_version": "3.6.6-34-gfaa9950",
+  "used_options": [
+
+  ],
+  "unused_options": [
+
+  ],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": true,
+  "installed_as_dependency": false,
+  "installed_on_request": true,
+  "changed_files": [
+    "lib/pkgconfig/portaudio-2.0.pc",
+    "lib/pkgconfig/portaudiocpp.pc"
+  ],
+  "time": 1685154431,
+  "source_modified_time": 1617237342,
+  "compiler": "clang",
+  "aliases": [
+
+  ],
+  "runtime_dependencies": [
+
+  ],
+  "source": {
+    "spec": "stable",
+    "versions": {
+      "stable": "19.7.0",
+      "head": null,
+      "version_scheme": 1
+    },
+    "path": "/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/portaudio.rb",
+    "tap_git_head": "b9e7330d5e19f1e2a6ac2ccf23ad93e55da75271",
+    "tap": "homebrew/core"
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 13",
+    "cpu_family": "dunno",
+    "xcode": "14.1",
+    "clt": "14.1.0.0.1.1665256668",
+    "preferred_perl": "5.30"
+  }
+}
