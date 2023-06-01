@@ -24,6 +24,9 @@ RUN ./configure && \
     make && \
     make install
 
+# Install additional dependencies for pyaudio
+RUN apt-get install -y portaudio19-dev
+
 # Switch back to the notebook user
 USER $NB_UID
 
@@ -31,3 +34,4 @@ USER $NB_UID
 
 # Start the Jupyter Notebook
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+
