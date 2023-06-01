@@ -38,6 +38,9 @@ USER $NB_UID
 # Copy the notebook file to the user's home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
+# Mount the repository directory as a volume
+VOLUME /home/$NB_USER
+
 # Set the permissions for the notebook file
 # RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
     # && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
