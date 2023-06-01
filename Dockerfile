@@ -27,8 +27,14 @@ RUN ./configure && \
 # Switch back to the notebook user
 USER $NB_UID
 
+# Install Jupyter notebook and other dependencies
+RUN pip install jupyter
+
 # Copy the Jupyter notebook to the home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Start the Jupyter Notebook
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+# CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+
+# Start the Jupyter Lab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
