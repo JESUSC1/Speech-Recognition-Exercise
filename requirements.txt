@@ -1,10 +1,3 @@
-# System dependency for pyaudio
-portaudio19-dev
-
-# Python dependencies
-pyasn1<0.6.0,>=0.4.6
-wave==0.0.2
-docopt==0.6.2
 sounddevice
 pyaudio
 wave
@@ -12,3 +5,4 @@ soundfile
 pydub
 google-cloud-speech
 num2words
+
