@@ -7,25 +7,22 @@ COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar
 
 # Install necessary build dependencies
 RUN apt-get update && \
-    apt-get install -y autoconf automake libtool
+    apt-get install -y autoconf automake libtool libsndfile1-dev
 
 # Extract the PortAudio source code
 RUN tar -xf /tmp/portaudio.tar -C /tmp && \
     rm /tmp/portaudio.tar
 
 # Set the working directory to the PortAudio source directory
-WORKDIR /tmp/portaudio-2.0.0
+WORKDIR /tmp/portaudio
 
 # Generate the 'configure' script from 'configure.in'
-RUN autoreconf -i
+RUN autoconf
 
 # Configure and build PortAudio
 RUN ./configure && \
     make && \
     make install
-
-# Install additional dependencies for pyaudio
-RUN apt-get install -y portaudio19-dev
 
 # Switch back to the notebook user
 USER $NB_UID
@@ -34,4 +31,3 @@ USER $NB_UID
 
 # Start the Jupyter Notebook
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
-
