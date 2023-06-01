@@ -17,7 +17,7 @@ COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar
 # Extract the PortAudio source code
 RUN tar -xf /tmp/portaudio.tar -C /tmp && \
     chown -R $NB_UID:$NB_GID /tmp/portaudio && \
-    rm /tmp/portaudio.tar
+    mv /tmp/portaudio.tar /tmp/portaudio.tar.old
 
 # Set the working directory to the PortAudio source directory
 WORKDIR /tmp/portaudio
@@ -45,3 +45,4 @@ WORKDIR /home/$NB_USER
 
 # Start the Jupyter Notebook
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+
