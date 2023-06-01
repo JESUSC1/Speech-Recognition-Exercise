@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Install PortAudio system dependency
 cp -R dependencies/portaudio/* /usr/local/
 
