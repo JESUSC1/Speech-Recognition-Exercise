@@ -8,9 +8,9 @@ COPY pa_stable_v190700_20210406.tar /pa_stable_v190700_20210406.tar
 # Extract the contents of the tar file
 RUN tar -xf /pa_stable_v190700_20210406.tar
 
-# Install autotools-dev package
+# Install autotools-dev and autoconf packages
 RUN apt-get update && \
-    apt-get install -y autotools-dev
+    apt-get install -y autotools-dev autoconf
 
 # Install PortAudio from the extracted files
 WORKDIR /pa_stable_v190700_20210406
@@ -26,3 +26,4 @@ COPY --chown=1000:1000 src/ ${HOME}/
 
 # Install Python dependencies
 RUN ${KERNEL_PYTHON_PREFIX}/bin/pip install --no-cache-dir -r "${HOME}/requirements.txt"
+
