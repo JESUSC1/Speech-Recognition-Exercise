@@ -1,21 +1,22 @@
-FROM jupyter/datascience-notebook:latest
+# Use a base image
+FROM jupyter/datascience-notebook
 
-USER root
+# Copy the PortAudio files to the /usr/local/ directory
+COPY dependencies/portaudio/ /usr/local/
 
-# Copy the tar file to the root directory
-COPY pa_stable_v190700_20210406.tar /pa_stable_v190700_20210406.tar
+# Copy the requirements.txt file to the working directory
+COPY src/requirements.txt .
 
-# Extract the contents of the tar file
-RUN tar -xf /pa_stable_v190700_20210406.tar
-
-# Install PortAudio from the extracted files
-WORKDIR /pa_stable_v190700_20210406
-RUN ./configure && make && make install
-
-USER ${NB_USER}
-
-# Copy your project files to the Docker image
-COPY --chown=1000:1000 src/ ${HOME}/
+# Install PortAudio system dependency
+RUN apt-get update && apt-get install -y portaudio19-dev
 
 # Install Python dependencies
-RUN ${KERNEL_PYTHON_PREFIX}/bin/pip install --no-cache-dir -r "${HOME}/requirements.txt"
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of your project files to the working directory
+COPY src/ .
+
+# Set the entry point command (if needed)
+# ENTRYPOINT [ "python", "your_script.py" ]
+ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+
