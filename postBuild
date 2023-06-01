@@ -1,37 +1,38 @@
 #!/bin/bash
 
-# Install necessary build dependencies
-apt-get update && \
-    apt-get install -y autoconf automake libtool libsndfile1-dev
+# Copy the tar file to the desired directory
+COPY pa_stable_v190700_20210406.tar /home/$NB_USER/
 
-# Copy the PortAudio source code into the Docker image
-cp pa_stable_v190700_20210406.tar /tmp/portaudio.tar
-
-# Extract the PortAudio source code
-tar -xf /tmp/portaudio.tar -C /tmp && \
-    rm /tmp/portaudio.tar
+# Extract the contents of the tar file directly into the desired directory
+RUN tar -xf /home/$NB_USER/pa_stable_v190700_20210406.tar -C /home/$NB_USER/ && \
+    rm /home/$NB_USER/pa_stable_v190700_20210406.tar
 
 # Set the working directory to the PortAudio source directory
-cd /tmp/portaudio
+WORKDIR /home/$NB_USER/portaudio
 
 # Generate the 'configure' script from 'configure.in'
-autoreconf -fiv
+RUN autoreconf -fiv
+
+# Install necessary build dependencies
+RUN apt-get update && \
+    apt-get install -y autoconf automake libtool libsndfile1-dev
 
 # Configure and build PortAudio
-./configure && \
+RUN ./configure && \
     make && \
     make install
 
+# Set the working directory back to the home directory
+WORKDIR /home/$NB_USER
+
 # Copy the Jupyter notebook to the home directory
-cp Speech_Recognition_Exercise.ipynb /home/jovyan/
+COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Set permissions for the notebook
-chown jovyan:users /home/jovyan/Speech_Recognition_Exercise.ipynb
+RUN chown $NB_USER:users /home/$NB_USER/Speech_Recognition_Exercise.ipynb
 
 # Install Python dependencies
-pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Start the Jupyter Notebook
-jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
-
-
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
