@@ -39,8 +39,8 @@ USER $NB_UID
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Set the permissions for the notebook file
-RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
-    && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
+# RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
+    # && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
 
 # By using chmod 664, the notebook file will be readable and writable by the user running the Jupyter Notebook 
 # server inside the container, as well as by members of the same group. Other users will have read-only access to the file
