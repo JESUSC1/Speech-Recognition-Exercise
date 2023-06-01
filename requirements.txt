@@ -1,7 +1,6 @@
 sounddevice
 pyaudio
 wave
-threading
 soundfile
 pydub
 google-cloud-speech
