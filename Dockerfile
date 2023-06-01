@@ -31,7 +31,7 @@ USER $NB_UID
 RUN pip install jupyter
 
 # Copy the Jupyter notebook to the home directory
-COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
+COPY ./Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Start the Jupyter Notebook
 # CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
