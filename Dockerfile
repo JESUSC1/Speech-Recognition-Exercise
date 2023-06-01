@@ -43,9 +43,8 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Set the permissions for the notebook file
-USER root
-RUN chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
-USER $NB_UID
+RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
+    && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
 
 # By using chmod 664, the notebook file will be readable and writable by the user running the Jupyter Notebook 
 # server inside the container, as well as by members of the same group. Other users will have read-only access to the file
@@ -56,5 +55,5 @@ USER $NB_UID
 # Set the working directory to the home directory
 WORKDIR /home/$NB_USER
 
-# Start the Jupyter Notebook
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+# Start the Jupyter Lab
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
