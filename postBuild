@@ -1,5 +1,5 @@
 # Install PortAudio system dependency
-cp -R dependencies/portaudio/* /usr/local/
+# cp -R dependencies/portaudio/* /usr/local/
 
 # Install Python dependencies
 pip install -r requirements.txt
