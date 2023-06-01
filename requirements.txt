@@ -1,4 +1,4 @@
--f file://dependencies
+-f file://dependencies/portaudio
 
 sounddevice
 pyaudio
