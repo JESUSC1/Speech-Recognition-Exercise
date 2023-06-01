@@ -1,5 +1,3 @@
--f file://dependencies/portaudio
-
 sounddevice
 pyaudio
 wave
