@@ -14,8 +14,8 @@
     <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" width="110" height="20">
 </a>
 
-<a href="https://mybinder.org/v2/gh/JESUSC1/Speech-Recognition-Exercise.git/HEAD?labpath=Speech_Recognition_Exercise.ipynb">
-    <img src="https://mybinder.org/badge_logo.svg" alt="Binder" width="110" height="20">
+<a href="https://mybinder.org/v2/gh/JESUSC1/Speech-Recognition-Exercise.git/HEAD?labpath=Speech_Recognition_Exercise.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" height="20" width="110"></a>
+
 </a>
 
 
