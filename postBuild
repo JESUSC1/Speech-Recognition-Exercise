@@ -29,8 +29,8 @@ WORKDIR /home/$NB_USER
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Set permissions for the notebook
-RUN chown $NB_USER:users /home/$NB_USER/Speech_Recognition_Exercise.ipynb
-RUN chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
+# RUN chown $NB_USER:users /home/$NB_USER/Speech_Recognition_Exercise.ipynb
+# RUN chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
 
 # Install Python dependencies
 RUN pip install -r requirements.txt
