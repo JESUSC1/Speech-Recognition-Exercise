@@ -1,5 +1,5 @@
 <a href="https://cloud.google.com">
-    <img src="https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" width="110" height="15">
+    <img src="https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" width="110" height="18">
 </a>
 
 <a href="https://jupyter.org">
