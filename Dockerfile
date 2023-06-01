@@ -35,11 +35,18 @@ RUN ./configure && \
 # Switch back to non-root user
 USER $NB_UID
 
-# Copy the Jupyter notebook to the home directory
+# Copy the notebook file to the user's home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
-# Set permissions for the notebook
-RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb
+# Set the permissions for the notebook file
+RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
+    && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
+
+# By using chmod 664, the notebook file will be readable and writable by the user running the Jupyter Notebook 
+# server inside the container, as well as by members of the same group. Other users will have read-only access to the file
+
+# By using chmod 664, the notebook file will be readable by the user running the Jupyter Notebook 
+# server inside the container, as well as by members of the same group. Other users will have read-only access to the file
 
 # Install Python dependencies
 COPY requirements.txt /tmp/requirements.txt
