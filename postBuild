@@ -1,5 +1,37 @@
-# Install PortAudio system dependency
-# cp -R dependencies/portaudio/* /usr/local/
+#!/bin/bash
+
+# Install necessary build dependencies
+apt-get update && \
+    apt-get install -y autoconf automake libtool libsndfile1-dev
+
+# Copy the PortAudio source code into the Docker image
+cp pa_stable_v190700_20210406.tar /tmp/portaudio.tar
+
+# Extract the PortAudio source code
+tar -xf /tmp/portaudio.tar -C /tmp && \
+    rm /tmp/portaudio.tar
+
+# Set the working directory to the PortAudio source directory
+cd /tmp/portaudio
+
+# Generate the 'configure' script from 'configure.in'
+autoreconf -fiv
+
+# Configure and build PortAudio
+./configure && \
+    make && \
+    make install
+
+# Copy the Jupyter notebook to the home directory
+cp Speech_Recognition_Exercise.ipynb /home/jovyan/
+
+# Set permissions for the notebook
+chown jovyan:users /home/jovyan/Speech_Recognition_Exercise.ipynb
 
 # Install Python dependencies
 pip install -r requirements.txt
+
+# Start the Jupyter Notebook
+jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
+
+
