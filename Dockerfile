@@ -2,28 +2,32 @@ FROM jupyter/datascience-notebook:latest
 
 USER root
 
-# Copy the tar file to the root directory
-COPY pa_stable_v190700_20210406.tar /pa_stable_v190700_20210406.tar
+# Copy the PortAudio source code into the Docker image
+COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar
 
-# Extract the contents of the tar file
-RUN tar -xf /pa_stable_v190700_20210406.tar
-
-# Install autotools-dev and autoconf packages
+# Install necessary build dependencies
 RUN apt-get update && \
-    apt-get install -y autotools-dev autoconf
+    apt-get install -y autoconf automake libtool
 
-# Install PortAudio from the extracted files
-WORKDIR /pa_stable_v190700_20210406
-RUN autoreconf -i && \
-    ./configure && \
+# Extract the PortAudio source code
+RUN tar -xf /tmp/portaudio.tar -C /tmp && \
+    rm /tmp/portaudio.tar
+
+# Set the working directory to the PortAudio source directory
+WORKDIR /tmp/portaudio-2.0.0
+
+# Generate the 'configure' script from 'configure.in'
+RUN autoreconf -i
+
+# Configure and build PortAudio
+RUN ./configure && \
     make && \
     make install
 
-USER ${NB_USER}
+# Switch back to the notebook user
+USER $NB_UID
 
-# Copy your project files to the Docker image
-COPY --chown=1000:1000 src/ ${HOME}/
+# Optionally, you can include additional steps specific to your project, such as installing Python packages or setting up the notebook environment.
 
-# Install Python dependencies
-RUN ${KERNEL_PYTHON_PREFIX}/bin/pip install --no-cache-dir -r "${HOME}/requirements.txt"
-
+# Start the Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
