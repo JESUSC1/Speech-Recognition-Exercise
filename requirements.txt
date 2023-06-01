@@ -5,4 +5,7 @@ soundfile
 pydub
 google-cloud-speech
 num2words
+pandas
+numpy
+pyspark
 
