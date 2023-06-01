@@ -14,10 +14,13 @@ RUN tar -xf /tmp/portaudio.tar -C /tmp && \
     rm /tmp/portaudio.tar
 
 # Set the working directory to the PortAudio source directory
-WORKDIR /tmp/portaudio-2.0.0
+WORKDIR /tmp/portaudio
 
-# Generate the 'configure' script from 'configure.in' and build PortAudio
-RUN autoconf && ./configure && \
+# Generate the 'configure' script from 'configure.in'
+RUN autoreconf -fiv
+
+# Configure and build PortAudio
+RUN ./configure && \
     make && \
     make install
 
@@ -27,5 +30,5 @@ USER $NB_UID
 # Copy the Jupyter notebook to the home directory
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
-# Start the Jupyter Notebook with the specified notebook file
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.default_url=/home/jovyan/Speech_Recognition_Exercise.ipynb"]
+# Start the Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
