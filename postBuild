@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Install PortAudio
+# Install PortAudio system dependency
+apt-get update
 apt-get install -y portaudio19-dev
 
-# Install Python packages
+# Install Python dependencies
 pip install -r requirements.txt
