@@ -20,4 +20,4 @@
 
 
 # Speech-Recognition-Exercise
-Build a data pipeline to perform speech recognition and analysis using the SpeechRecognition library in Python and Google Cloud Speech-to-Text API. For better interactivity with the Jupyter Notebook launch binder by clicking on the respective badge. 
+The purpose of this project is to build a data pipeline to perform speech recognition and analysis by utilizing the SpeechRecognition library in Python and Google Cloud Speech-to-Text API. Note, to better interact with the Jupyter Notebook ( launch binder by clicking on the respective badge. 
