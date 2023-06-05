@@ -19,17 +19,16 @@
 </a>
 </p>
 
-</pre>
+<p><b>Speech-Recognition-Exercise:</b></p>
 
-<b>Speech-Recognition-Exercise:<b>
+<p>The purpose of this project is to build a data pipeline to perform speech recognition and analysis by utilizing the SpeechRecognition library in Python and Google Cloud Speech-to-Text API. Note, for better interactivity with the Jupyter Notebook (Speech_Recognition_Exercise.ipynb) please launch binder by clicking on the respective badge.</p>
 
-The purpose of this project is to build a data pipeline to perform speech recognition and analysis by utilizing the SpeechRecognition library in Python and Google Cloud Speech-to-Text API. Note, for better interactivity with the Jupyter Notebook (Speech_Recognition_Exercise.ipynb) please launch binder by clicking on the respective badge. 
-
-The project is divided into two parts:
- 1. Training a speech recognition model: This part of the project uses the SpeechRecognition library to train a speech recognition model on a        dataset of audio recordings. The model is then saved to a file so that it can be used for inference.
+<p>The project is divided into two parts:</p>
+<ol>
+  <li><b>Training a speech recognition model:</b> This part of the project uses the SpeechRecognition library to train a speech recognition model on a dataset of audio recordings. The model is then saved to a file so that it can be used for inference.</li>
     
- 2. Performing speech recognition: This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live        audio stream. The results of the speech recognition are then displayed to the user.
+  <li><b>Performing speech recognition:</b> This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live audio stream. The results of the speech recognition are then displayed to the user.</li>
+</ol>
 
+<p>Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0</p>
 
-Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0
-</pre>
