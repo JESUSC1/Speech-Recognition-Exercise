@@ -17,11 +17,19 @@
 <a href="https://mybinder.org/v2/gh/JESUSC1/Speech-Recognition-Exercise.git/HEAD">
   <img src="https://mybinder.org/badge_logo.svg" alt="Binder" width="100" height="20">
 </a>
+</p>
 
+</pre>
 
-# Speech-Recognition-Exercise
+<b>Speech-Recognition-Exercise:<b>
+
 The purpose of this project is to build a data pipeline to perform speech recognition and analysis by utilizing the SpeechRecognition library in Python and Google Cloud Speech-to-Text API. Note, for better interactivity with the Jupyter Notebook (Speech_Recognition_Exercise.ipynb) please launch binder by clicking on the respective badge. 
 
-Python Version: 3.10.9
-<br>
-Google Cloud Speech: 2.20.0
+The project is divided into two parts:
+ 1. Training a speech recognition model: This part of the project uses the SpeechRecognition library to train a speech recognition model on a        dataset of audio recordings. The model is then saved to a file so that it can be used for inference.
+    
+ 2. Performing speech recognition: This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live        audio stream. The results of the speech recognition are then displayed to the user.
+
+
+Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0
+</pre>
