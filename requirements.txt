@@ -3,6 +3,7 @@
 
 # Required Python packages
 SpeechRecognition
+pyaudio
 sounddevice
 wave
 soundfile
