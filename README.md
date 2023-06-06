@@ -14,9 +14,6 @@
     <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" width="100" height="20">
 </a>
 
-<a href="https://mybinder.org/v2/gh/JESUSC1/Speech-Recognition-Exercise.git/HEAD">
-  <img src="https://mybinder.org/badge_logo.svg" alt="Binder" width="100" height="20">
-</a>
 </p>
 
 <p><b>Speech-Recognition-Exercise:</b></p>
@@ -30,7 +27,8 @@
   <li><b>Performing speech recognition:</b> This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live audio stream. The results of the speech recognition are then displayed to the user.</li>
 </ol>
 
-<p><p>
+<p> I write blogs to stay up-to-date with topics on computer science, data science & engineering ⌨️. Check out my <a href="https://medium.com/@jesus.cantu217" style="text-decoration: underline;"title=" Medium blog">page</a> to read more on speech recognition!</p>
+</p>
 
 <p>Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0</p>
 
