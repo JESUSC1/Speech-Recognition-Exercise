@@ -1,5 +1,5 @@
+# Required Python packages
 sounddevice
-pyaudio
 wave
 soundfile
 pydub
@@ -8,4 +8,11 @@ num2words
 pandas
 numpy
 pyspark
+
+# Binder-specific requirements
+binder/python=3.7
+
+# Files to persist in the Binder environment
+binder/persist-file:
+  - Speech_Recognition_Exercise.ipynb
 
