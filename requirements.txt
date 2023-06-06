@@ -2,6 +2,7 @@
 # binder/python=3.7
 
 # Required Python packages
+SpeechRecognition
 sounddevice
 wave
 soundfile
