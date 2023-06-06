@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Copy the PortAudio source code to the desired directory
-cp pa_stable_v190700_20210406.tar /home/jovyan/
+cp pa_stable_v190700_20210406.tar /home/$NB_USER/
 
 # Extract the contents of the tar file directly into the desired directory
-tar -xf /home/jovyan/pa_stable_v190700_20210406.tar -C /home/jovyan/ && \
-    rm /home/jovyan/pa_stable_v190700_20210406.tar
+tar -xf /home/$NB_USER/pa_stable_v190700_20210406.tar -C /home/$NB_USER/ && \
+    rm /home/$NB_USER/pa_stable_v190700_20210406.tar
 
 # Set the working directory to the root of the repository
-cd /home/jovyan/Speech-Recognition-Exercise
+cd /home/$NB_USER/Speech-Recognition-Exercise
 
 # Generate the 'configure' script from 'configure.in'
 autoreconf -fiv
@@ -23,7 +23,7 @@ apt-get update && \
     make install
 
 # Set the working directory back to the home directory
-cd /home/jovyan
+cd /home/$NB_USER
 
 # Copy the Jupyter notebook to the home directory
-cp Speech_Recognition_Exercise.ipynb /home/jovyan/
+cp Speech_Recognition_Exercise.ipynb /home/$NB_USER/
