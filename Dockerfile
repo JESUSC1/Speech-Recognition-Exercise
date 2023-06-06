@@ -24,6 +24,9 @@ RUN ./configure && \
     make && \
     make install
 
+# Install PortAudio system-wide
+RUN ldconfig
+
 # Switch back to the notebook user
 USER $NB_UID
 
@@ -47,6 +50,8 @@ VOLUME /home/$NB_USER
 
 # Start the Jupyter Lab
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+
+
 
 # Here's a breakdown of the steps in the Dockerfile:
 
