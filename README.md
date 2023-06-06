@@ -27,7 +27,7 @@
   <li><b>Performing speech recognition:</b> This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live audio stream. The results of the speech recognition are then displayed to the user.</li>
 </ol>
 
-<p> I write blogs to stay up-to-date with topics on computer science, data science & engineering ⌨️. Check out my <a href="https://medium.com/@jesus.cantu217" style="text-decoration: underline;"title=" Medium blog">page</a> to read more on speech recognition!</p>
+<p> I write blogs to stay up-to-date with topics on computer science, data science & engineering ⌨️. Check out my <a href="https://medium.com/@jesus.cantu217" style="text-decoration: underline;"title=" Medium blog">profile</a> to read more on speech recognition!</p>
 </p>
 
 <p>Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0</p>
