@@ -1,0 +1,3 @@
+binder:
+  persist_files:
+    - Speech_Recognition_Exercise.ipynb
