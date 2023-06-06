@@ -1,3 +1,6 @@
+# Binder-specific requirements
+# binder/python=3.7
+
 # Required Python packages
 sounddevice
 wave
@@ -8,9 +11,6 @@ num2words
 pandas
 numpy
 pyspark
-
-# Binder-specific requirements
-binder/python=3.7
 
 # Files to persist in the Binder environment
 binder/persist-file:
