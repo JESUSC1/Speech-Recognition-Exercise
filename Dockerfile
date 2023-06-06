@@ -49,6 +49,7 @@ VOLUME /home/$NB_USER
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
 
 
+
 # Here's a breakdown of the steps in the Dockerfile:
 
 # 1. The base image jupyter/datascience-notebook:latest is used, which already includes Jupyter and #necessary dependencies.
