@@ -11,8 +11,3 @@ num2words
 pandas
 numpy
 pyspark
-
-# Files to persist in the Binder environment
-binder/persist-file:
-  - Speech_Recognition_Exercise.ipynb
-
