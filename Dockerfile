@@ -34,7 +34,7 @@ WORKDIR /home/$NB_USER
 COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 
 # Start the Jupyter Lab
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.allow_origin='*'"]
 
 
 # Here's a breakdown of the steps in your Dockerfile:
