@@ -52,21 +52,23 @@ VOLUME /home/$NB_USER
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
 
 
-
 # Here's a breakdown of the steps in the Dockerfile:
 
-# 1. The base image jupyter/datascience-notebook:latest is used, which already includes Jupyter and #necessary dependencies.
-# 2. The user is switched to root to install system dependencies.
-# 3. The necessary build dependencies are installed using apt-get.
-# 4. The PortAudio source code is copied into the Docker image.
-# 5. The PortAudio source code is extracted and the ownership is changed to the notebook user.
-# 6. The working directory is set to the PortAudio source directory.
-# 7. The 'configure' script is generated from 'configure.in'.
-# 8. The user is switched back to root to install the PortAudio library.
-# 9. The PortAudio library is configured, built, and installed.
-# 10. The user is switched back to the notebook user.
-# 11.The notebook file Speech_Recognition_Exercise.ipynb is copied to the user's home directory.
-# 12. The Python dependencies listed in requirements.txt are installed using pip.
-# 13. The working directory is set to the root of the repository (/home/$NB_USER/Speech-Recognition-Exercise).
-# 14. The Jupyter Lab is started with the specified command.
+# 1. FROM jupyter/datascience-notebook:latest: This specifies the base image to use for building the Docker image, in this case, the Jupyter datascience-notebook image.
+# 2. USER root: Switches to the root user to perform some system-level operations.
+# 3. COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar: Copies the PortAudio source code tarball into the Docker image.
+# 4. RUN apt-get update && apt-get install -y autoconf automake libtool libsndfile1-dev: Updates the package lists and installs necessary build dependencies for PortAudio.
+# 5. RUN tar -xf /tmp/portaudio.tar -C /tmp && rm /tmp/portaudio.tar: Extracts the PortAudio source code from the tarball into the /tmp/portaudio directory.
+# 6. WORKDIR /tmp/portaudio: Sets the working directory to the PortAudio source directory.
+# 7. RUN autoreconf -fiv: Generates the 'configure' script from 'configure.in' using autoreconf.
+# 8. RUN ./configure && make && make install: Configures, compiles, and installs PortAudio.
+# 9. RUN ldconfig: Updates the dynamic linker cache, ensuring that the PortAudio library is properly accessible system-wide.
+# 10. USER $NB_UID: Switches back to the default notebook user.
+# 11. WORKDIR /home/$NB_USER: Sets the working directory to the home directory of the notebook user.
+# 12. COPY . /home/$NB_USER/: Copies all files from the root directory into the home directory.
+# 13. COPY requirements.txt /home/$NB_USER/: Copies the requirements.txt file into the home directory.
+# 14. RUN pip install -r requirements.txt: Installs the Python dependencies listed in the requirements.txt file.
+# 15. ENV ALLOW_SAVE True: Sets the ALLOW_SAVE environment variable to True, allowing changes to be saved in the notebook.
+# 16. VOLUME /home/$NB_USER: Mounts the repository directory as a volume, allowing data persistence.
+# 17. CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]: Specifies the command to run when the container starts, which is to start Jupyter Lab with appropriate settings.
 
