@@ -30,8 +30,8 @@ USER $NB_UID
 # Set the working directory to the home directory
 WORKDIR /home/$NB_USER
 
-# Copy the Jupyter notebook to the home directory
-COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
+# Copy all files from the root directory to the home directory
+COPY . /home/$NB_USER/
 
 # Copy the requirements.txt file to the home directory
 COPY requirements.txt /home/$NB_USER/
@@ -47,8 +47,6 @@ VOLUME /home/$NB_USER
 
 # Start the Jupyter Lab
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
-
-
 
 # Here's a breakdown of the steps in the Dockerfile:
 
