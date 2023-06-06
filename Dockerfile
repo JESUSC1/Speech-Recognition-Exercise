@@ -16,7 +16,8 @@ COPY pa_stable_v190700_20210406.tar /tmp/portaudio.tar
 
 # Extract the PortAudio source code
 RUN tar -xf /tmp/portaudio.tar -C /tmp && \
-    chown -R $NB_UID:$NB_GID /tmp/portaudio
+    chown -R $NB_UID:$NB_GID /tmp/portaudio && \
+    rm /tmp/portaudio.tar
 
 # Set the working directory to the PortAudio source directory
 WORKDIR /tmp/portaudio
@@ -42,21 +43,9 @@ COPY Speech_Recognition_Exercise.ipynb /home/$NB_USER/
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-# Set the permissions for the notebook file
-# RUN chown $NB_UID:$NB_GID /home/$NB_USER/Speech_Recognition_Exercise.ipynb \
-#   && chmod 664 /home/$NB_USER/Speech_Recognition_Exercise.ipynb
-
-# By using chmod 664, the notebook file will be readable and writable by the user running the Jupyter Notebook 
-# server inside the container, as well as by members of the same group. Other users will have read-only access to the file
-
-# By using chmod 644, the notebook file will be readable by the user running the Jupyter Notebook 
-# server inside the container, as well as by members of the same group. Other users will have read-only access to the file
-
-# Copy the entire repository to the desired directory
-COPY . /home/$NB_USER/Speech-Recognition-Exercise
-
 # Set the working directory to the root of the repository
 WORKDIR /home/$NB_USER/Speech-Recognition-Exercise
 
 # Start the Jupyter Lab
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+
