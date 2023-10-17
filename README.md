@@ -1,4 +1,4 @@
-# Speech Recognition Exercise
+# Speech-Recognition-Exercise
 ![Speech Recognition Image](speech_recognition_image.png)
 
 This project delves into the realm of speech recognition, aiming to convert spoken language into written text. By leveraging various libraries and technologies, the project transcribes audio from diverse sources and applies a range of recognition engines.
@@ -27,7 +27,7 @@ The project's primary objective is to transcribe spoken language with high accur
 - Applied large-scale data analysis techniques using Apache Spark, deriving valuable insights from transcribed content.
 
 ## Conclusion
-The "Speech Recognition Exercise" project demonstrates the power and versatility of modern speech recognition techniques. By combining various libraries and methodologies, the project offers a comprehensive system for transcribing spoken language. This system holds potential for a wide array of applications, from transcription services to voice assistants and beyond.
+The "Speech-Recognition-Exercise" project demonstrates the power and versatility of modern speech recognition techniques. By combining various libraries and methodologies, the project offers a comprehensive system for transcribing spoken language. This system holds potential for a wide array of applications, from transcription services to voice assistants and beyond.
 
 ## Future Work
 Further advancements in this project could encompass:
