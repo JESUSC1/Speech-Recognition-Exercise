@@ -37,7 +37,7 @@ Further advancements in this project could encompass:
 - Incorporation of natural language processing techniques to refine and structure transcribed content.
 
 # Note
-To fully understand the conclusions drawn in this analysis, it is recommended to go through the entire notebook, including the code and its outputs. You can view the HTML version fo the notebook [here](https://nbviewer.org/github/JESUSC1/Speech-Recognition-Exercise/blob/main/Speech_Recognition_Exercise.ipynb).
+To fully understand the conclusions drawn in this analysis, it is recommended to go through the entire notebook, including the code and its outputs. You can view the HTML version of the notebook [here](https://nbviewer.org/github/JESUSC1/Speech-Recognition-Exercise/blob/main/Speech_Recognition_Exercise.ipynb).
 
 ## Author
 Jesus Cantu Jr.
