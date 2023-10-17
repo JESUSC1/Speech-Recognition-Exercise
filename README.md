@@ -4,11 +4,11 @@
 This project delves into the realm of speech recognition, aiming to convert spoken language into written text. By leveraging various libraries and technologies, the project transcribes audio from diverse sources and applies a range of recognition engines.
 
 ## Data Source
-The project utilizes various audio samples as primary data sources. These samples encompass diverse speech patterns, accents, and languages to ensure robustness in recognition.
+The project utilizes various audio samples as primary data sources. These samples were recorded live and captured from the computer's microphone. 
 
 ## Libraries Used
 The project utilizes a variety of libraries to facilitate speech recognition and data analysis:
-- `SpeechRecognition`: Primary library for speech-to-text conversion.
+- `SpeechRecognition`: Primary Python library for speech-to-text conversion.
 - `Google Cloud Services`: Cloud-based recognition engines.
 - `Apache Spark`: For large-scale data processing and analysis.
 
@@ -20,13 +20,11 @@ The project's primary objective is to transcribe spoken language with high accur
 - Model Optimization: Techniques and algorithms to enhance the accuracy of transcriptions.
 - Data Analysis: Utilizing Apache Spark for large-scale data processing and analysis of transcribed data.
 
-
 ## Key Achievements
 - Implemented a versatile speech recognition system capable of handling varied speech patterns.
 - Enhanced transcription granularity through diarization, allowing for a detailed breakdown of spoken content.
 - Undertook model optimization efforts to refine transcriptions, achieving notable improvements in accuracy.
 - Applied large-scale data analysis techniques using Apache Spark, deriving valuable insights from transcribed content.
-
 
 ## Conclusion
 The "Speech Recognition Exercise" project demonstrates the power and versatility of modern speech recognition techniques. By combining various libraries and methodologies, the project offers a comprehensive system for transcribing spoken language. This system holds potential for a wide array of applications, from transcription services to voice assistants and beyond.
@@ -39,7 +37,7 @@ Further advancements in this project could encompass:
 - Incorporation of natural language processing techniques to refine and structure transcribed content.
 
 # Note
-To fully understand the conclusions drawn in this analysis, it is recommended to go through the entire notebook, including the code and its outputs. You can view the HTML version fo the notebook here.
+To fully understand the conclusions drawn in this analysis, it is recommended to go through the entire notebook, including the code and its outputs. You can view the HTML version fo the notebook [here](https://nbviewer.org/github/JESUSC1/Speech-Recognition-Exercise/blob/main/Speech_Recognition_Exercise.ipynb).
 
 ## Author
 Jesus Cantu Jr.
