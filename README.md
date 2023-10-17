@@ -1,34 +1,51 @@
-<a href="https://jupyter.org">
-    <img src="https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook" width="100" height="20">
-</a>
+# Speech Recognition Exercise
+![Speech Recognition Image](speech_recognition_image.png)
 
-<a href="https://www.python.org">
-    <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" width="100" height="20">
-</a>
+This project delves into the realm of speech recognition, aiming to convert spoken language into written text. By leveraging various libraries and technologies, the project transcribes audio from diverse sources and applies a range of recognition engines.
 
-<a href="https://cloud.google.com">
-    <img src="https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" width="100" height="20">
-</a>
+## Data Source
+The project utilizes various audio samples as primary data sources. These samples encompass diverse speech patterns, accents, and languages to ensure robustness in recognition.
 
-<a href="https://www.apache.org">
-    <img src="https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white" alt="Apache" width="100" height="20">
-</a>
+## Libraries Used
+The project utilizes a variety of libraries to facilitate speech recognition and data analysis:
+- `SpeechRecognition`: Primary library for speech-to-text conversion.
+- `Google Cloud Services`: Cloud-based recognition engines.
+- `Apache Spark`: For large-scale data processing and analysis.
 
-</p>
+## Analysis
+The project's primary objective is to transcribe spoken language with high accuracy. To achieve this, the analysis involves:
+- Audio Processing: Direct audio capture from microphones and handling pre-recorded audio files.
+- Recognition Engines: Integration with Google Web Speech API, Google Cloud Speech API, CMU Sphinx, and other engines.
+- Diarization: Using algorithms to separate speakers in the audio files, thus attributing spoken content to individual participants.
+- Model Optimization: Techniques and algorithms to enhance the accuracy of transcriptions.
+- Data Analysis: Utilizing Apache Spark for large-scale data processing and analysis of transcribed data.
 
-<p><b>Speech-Recognition-Exercise:</b></p>
 
-<p>The purpose of this project is to build a data pipeline to perform speech recognition and analysis by utilizing the SpeechRecognition library in Python and Google Cloud Speech-to-Text API.</p>
+## Key Achievements
+- Implemented a versatile speech recognition system capable of handling varied speech patterns.
+- Enhanced transcription granularity through diarization, allowing for a detailed breakdown of spoken content.
+- Undertook model optimization efforts to refine transcriptions, achieving notable improvements in accuracy.
+- Applied large-scale data analysis techniques using Apache Spark, deriving valuable insights from transcribed content.
 
-<p>The project is divided into two parts:</p>
-<ol>
-  <li><b>Training a speech recognition model:</b> This part of the project uses the SpeechRecognition library to train a speech recognition model on a dataset of audio recordings. The model is then saved to a file so that it can be used for inference.</li>
-    
-  <li><b>Performing speech recognition:</b> This part of the project uses the Google Cloud Speech-to-Text API to perform speech recognition on a live audio stream. The results of the speech recognition are then displayed to the user.</li>
-</ol>
 
-<p> I write blogs to stay up-to-date with topics on computer science, data science & engineering ⌨️. Check out my <a href="https://medium.com/@jesus.cantu217" style="text-decoration: underline;"title=" Medium blog">profile</a> to read more on speech recognition!</p>
-</p>
+## Conclusion
+The "Speech Recognition Exercise" project demonstrates the power and versatility of modern speech recognition techniques. By combining various libraries and methodologies, the project offers a comprehensive system for transcribing spoken language. This system holds potential for a wide array of applications, from transcription services to voice assistants and beyond.
 
-<p>Python Version: 3.10.9 | Google Cloud Speech: 2.20.0 | Jupyter Lab 3.0</p>
+## Future Work
+Further advancements in this project could encompass:
+- Integration with more advanced recognition engines.
+- Exploration of neural network-based models for enhanced accuracy.
+- Extension of the diarization process to handle more complex audio samples with multiple speakers.
+- Incorporation of natural language processing techniques to refine and structure transcribed content.
+
+# Note
+To fully understand the conclusions drawn in this analysis, it is recommended to go through the entire notebook, including the code and its outputs. You can view the HTML version fo the notebook here.
+
+## Author
+Jesus Cantu Jr.
+
+## Last Updated 
+June 6, 2023
+
+
 
